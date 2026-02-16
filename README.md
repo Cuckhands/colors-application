@@ -38,4 +38,4 @@ To use the application, simply connect to the IP address in your browser, or ent
 
 **You can't delete a color from an account using the website.** To delete a color, you need to log directly into the database using MySQL and *manually* delete the item. That's obviously not very convenient, so feel free to create an API call and button that allows for deletion.
 
-**If you want the site to be secure, you will need to go through the effort of securing it yourself, likely using Certbot on Apache.** It's not overwhelmingly difficult to set up, but it definitely isn't intuitive. I had to use AI myself to make sense of all the errors I was getting.
+**If you want the site to be secure, you will need to go through the effort of securing it yourself, likely using Certbot on Apache.** It's not overwhelmingly difficult to set up, but it definitely isn't intuitive. I had to use AI myself to make sense of all the errors I was getting. Similarly, I had to set up SFTP to transfer files from my local system to the server. If you're unable to pull from the repo directly, consider setting up FTP.
