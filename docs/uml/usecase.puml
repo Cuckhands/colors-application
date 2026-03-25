@@ -1,9 +1,10 @@
 @startuml
 left to right direction
-skinparam packageStyle rectangle
 
-actor User
-actor Admin
+together {
+  actor User
+  actor Admin
+}
 
 rectangle "Colors LAMP Application" {
   usecase "Login" as UC_Login
@@ -24,7 +25,7 @@ rectangle "Colors LAMP Application" {
 
 User --> UC_Login
 User --> UC_Logout
-User --> UC_SearchColors
+User -> UC_SearchColors
 User --> UC_CreateColor
 
 Admin --> UC_CreateUser
