@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor User
+actor Admin
+
+rectangle "Colors LAMP Application" {
+  usecase "Login" as UC_Login
+  usecase "Logout" as UC_Logout
+  usecase "Search Color Entries" as UC_SearchColors
+  usecase "Create Color Entry" as UC_CreateColor
+
+  together {
+    usecase "Create User Entry" as UC_CreateUser
+    usecase "Delete User Entry" as UC_DeleteUser
+    usecase "Delete Color Entry" as UC_DeleteColor
+  }
+
+  usecase "Verify User Credentials" as UC_VerifyCredentials
+  usecase "User ID" as UC_UserID
+  usecase "Color ID" as UC_ColorID
+}
+
+User --> UC_Login
+User --> UC_Logout
+User --> UC_SearchColors
+User --> UC_CreateColor
+
+Admin --> UC_CreateUser
+Admin --> UC_CreateColor
+Admin --> UC_DeleteUser
+Admin --> UC_DeleteColor
+
+UC_CreateUser ..> UC_UserID : <<include>>
+UC_CreateColor ..> UC_UserID : <<include>>
+UC_CreateColor ..> UC_ColorID : <<include>>
+UC_DeleteUser ..> UC_UserID : <<include>>
+UC_DeleteColor ..> UC_UserID : <<include>>
+UC_DeleteColor ..> UC_ColorID : <<include>>
+UC_Login ..> UC_VerifyCredentials : <<include>>
+UC_VerifyCredentials ..> UC_UserID : <<include>>
+UC_SearchColors ..> UC_UserID : <<include>>
+@enduml
