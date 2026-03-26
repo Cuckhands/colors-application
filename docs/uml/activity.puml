@@ -1,0 +1,41 @@
+@startuml
+start
+:Open website;
+:Login page;
+
+if (Choose option?) then (Enter credentials)
+  fork
+    :Enter Username;
+  fork again
+    :Enter Password;
+  end fork
+  if (Valid credentials?) then (yes)
+    --> Colors page
+  else (no)
+    :Display error;
+    --> Login page
+  endif
+else (Close website)
+  :Close website;
+  stop
+endif
+
+:Colors page;
+if (Choose option?) then (Search color list)
+  :Search color list;
+  if (Colors matched?) then (yes)
+    :Display colors;
+  else (no)
+    :Do nothing;
+  endif
+  --> Colors page
+elseif (Add color) then (Add color)
+  :Add color;
+  --> Colors page
+elseif (Log out) then (Log out)
+  --> Login page
+else (Close website)
+  :Close website;
+  stop
+endif
+@enduml
