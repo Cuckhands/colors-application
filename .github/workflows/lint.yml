@@ -10,14 +10,24 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # retrieve the repo
+      - name: Checkout
+        uses: actions/checkout@v4 # retrieve the repo
+        with:
+          fetch-depth: 0
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Run lint
-        run: npm run lint
+          node-version: '20'
+          
+      - name: Install linters
+        run: npm install --save-dev eslint stylelint htmlhint
+
+      - name: Run ESLint  # for JS
+        run: npx eslint . --ext .js --max-warning=0
+
+      - name: Run Stylelint  # for CSS
+        run: npx stylelint "**/*.css" --max-warnings=0
+
+      - name: Run HTMLhint  # for HTML
+        run: npx htmlhint "**/*.html"
