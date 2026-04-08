@@ -24,7 +24,7 @@ jobs:
         run: npm install --save-dev eslint stylelint htmlhint
 
       - name: Run ESLint  # for JS
-        run: npx eslint . --ext .js --max-warning=0
+        run: npx eslint . --ext .js --max-warnings=0
 
       - name: Run Stylelint  # for CSS
         run: npx stylelint "**/*.css" --max-warnings=0
