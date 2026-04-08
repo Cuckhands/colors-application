@@ -10,11 +10,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4 # retrieve the repo
-        with:
-          fetch-depth: 0
-          
+      - uses: actions/checkout@v4 # retrieve the repo
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
