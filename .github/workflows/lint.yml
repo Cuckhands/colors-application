@@ -14,13 +14,14 @@ jobs:
         uses: actions/checkout@v4 # retrieve the repo
         with:
           fetch-depth: 0
-
-      - name: Run Super-Linter
-        uses: super-linter/super-linter@v6
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_HTML: true
-          VALIDATE_CSS: true
-          VALIDATE_PHP: true
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run lint
+        run: npm run lint
