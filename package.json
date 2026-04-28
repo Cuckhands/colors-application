@@ -2,8 +2,6 @@
   "name": "lamp-ci",
   "version": "1.0.0",
   "scripts": {
-    "generate-config": "node scripts/generate-config.js",
-    "pretest": "npm run generate-config",
     "predev": "npm run generate-config",
     "lint:js": "eslint .",
     "lint:html": "htmlhint '**/*.html'",

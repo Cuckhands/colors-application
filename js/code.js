@@ -5,7 +5,6 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
-// eslint-disable-next-line no-unused-vars
 function doLogin()
 {
 	userId = 0;
@@ -67,7 +66,6 @@ function saveCookie()
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
 
-// eslint-disable-next-line no-unused-vars
 function readCookie()
 {
 	userId = -1;
@@ -101,7 +99,6 @@ function readCookie()
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
 function doLogout()
 {
 	userId = 0;
@@ -111,7 +108,6 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-// eslint-disable-next-line no-unused-vars
 function addColor()
 {
 	let newColor = document.getElementById("colorText").value;
@@ -143,7 +139,6 @@ function addColor()
 	
 }
 
-// eslint-disable-next-line no-unused-vars
 function searchColor()
 {
 	let srch = document.getElementById("searchText").value;
