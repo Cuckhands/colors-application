@@ -1,4 +1,4 @@
-const urlBase = '//[YOUR_WEBSITE_OR_IP_ADDRESS: e.g. [hath.site]]/LAMPAPI';
+const urlBase = '/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;

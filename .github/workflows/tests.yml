@@ -24,3 +24,5 @@ jobs:
 
       - name: Run Jest tests (unit + integration)
         run: npm run test:ci
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}

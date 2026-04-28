@@ -2,6 +2,9 @@
   "name": "lamp-ci",
   "version": "1.0.0",
   "scripts": {
+    "generate-config": "node scripts/generate-config.js",
+    "pretest": "npm run generate-config",
+    "predev": "npm run generate-config",
     "lint:js": "eslint .",
     "lint:html": "htmlhint '**/*.html'",
     "lint:css": "stylelint '**/*.css'",
@@ -18,6 +21,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/user-event": "^14.6.1",
     "axios": "^1.15.2",
+    "dotenv": "^17.4.2",
     "eslint": "^10.0.0",
     "htmlhint": "^1.1.4",
     "jest": "^30.3.0",
