@@ -1,14 +1,32 @@
 {
-  "name": "lamp-lint",
+  "name": "lamp-ci",
   "version": "1.0.0",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:html": "htmlhint '**/*.html'",
+    "lint:css": "stylelint '**/*.css'",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "lint:fix": "eslint . --fix && stylelint '**/*.css' --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "ci": "npm run lint && npm run test:ci"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/user-event": "^14.6.1",
+    "axios": "^1.15.2",
     "eslint": "^10.0.0",
     "htmlhint": "^1.1.4",
+    "jest": "^30.3.0",
     "stylelint": "^16.0.0",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "supertest": "^7.2.2"
   },
   "dependencies": {
-    "globals": "^17.4.0"
+    "globals": "^17.4.0",
+    "jest-environment-jsdom": "^30.3.0"
   }
 }
